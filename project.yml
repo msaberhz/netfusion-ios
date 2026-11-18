@@ -1,0 +1,34 @@
+name: NetFusion
+options:
+  bundleIdPrefix: com.netfusion
+  deploymentTarget:
+    iOS: "16.0"
+  xcodeVersion: "15.0"
+
+targets:
+  NetFusion:
+    type: application
+    platform: iOS
+    sources:
+      - path: NetFusion
+    info:
+      path: NetFusion/Info.plist
+    entitlements:
+      path: NetFusion/NetFusion.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.netfusion.ios
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_VERSION: "5.9"
+
+  NetFusionTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: NetFusionTests
+      - path: PacketTunnelExtension/PacketCrypto.swift
+      - path: PacketTunnelExtension/ReorderBuffer.swift
+    settings:
+      base:
+        SWIFT_VERSION: "5.9"
